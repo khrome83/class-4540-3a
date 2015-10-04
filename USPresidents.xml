@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE presidents SYSTEM "president.dtd">
+<!DOCTYPE presidents[
+    <!ELEMENT presidents (president+)>
+    <!ATTLIST presidents date CDATA #IMPLIED>
+    <!ELEMENT president (number,name,took_office,left_office,party,term+)>
+    <!ELEMENT number (#PCDATA)>
+    <!ELEMENT name (#PCDATA)>
+    <!ELEMENT took_office (#PCDATA)>
+    <!ELEMENT left_office (#PCDATA)>
+    <!ELEMENT party (#PCDATA)>
+    <!ELEMENT term (number,vice_president)>
+    <!ELEMENT vice_president (#PCDATA)>
+]>
 <!-- Information about US Presidents -->
 <?xml-stylesheet type="text/css" href="president.css" ?>
 <presidents date="2012-08-18">
@@ -124,6 +135,7 @@
         <name>William Henry Harrison</name>
         <took_office>March 4, 1841</took_office>
         <left_office>April 4, 1841</left_office>
+        <party>Whig</party>
         <term>
             <number>14</number>
             <vice_president>John Tyler</vice_president>
